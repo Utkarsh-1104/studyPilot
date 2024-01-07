@@ -1,0 +1,35 @@
+* {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% ); 
+    height: 1000px;
+    width: 100%;
+}
+nav {
+    background-color: rgb(129, 148, 184);
+    padding: 1.5rem;
+}
+h1 {
+    color: rgb(239, 41, 143);
+    font-size: 3rem;
+    text-align: center;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+li a {
+    text-decoration: none;
+    color: rgb(239, 127, 41);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+li a:hover {
+    color: rgb(239, 41, 143);
+    text-decoration: underline;
+}
