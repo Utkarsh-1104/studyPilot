@@ -76,3 +76,18 @@ body {
     font-family: Nunito;
     font-size: 20px;
 }
+.list-box:nth-child(5n+1) {
+    background: #FD99FF;
+}
+.list-box:nth-child(5n+2) {
+    background: #FF9E9E;
+}
+.list-box:nth-child(5n+3) {
+    background: #91F48F;
+}
+.list-box:nth-child(5n+4) {
+    background: #FFF599;
+}
+.list-box:nth-child(5n+5) {
+    background: #9EFFFF;
+} 
