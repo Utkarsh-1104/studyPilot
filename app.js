@@ -14,7 +14,16 @@ app.get('/', (req, res) => {
 app.get('/list', (req, res) => {
     res.render('list')
 })
+
+app.get('/compose', (req, res) => {
+    res.render('compose')
+})
+
 app.post('/', (req, res) => {
+    res.redirect('/compose')
+})
+
+app.post('/compose', (req, res) => {
     res.redirect('/list')
 })
 app.listen(1111, () => {

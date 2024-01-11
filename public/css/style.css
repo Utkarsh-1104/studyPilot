@@ -44,6 +44,8 @@ body {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    position: fixed;
+    top: 34rem;
 }
 .btn-div {
     fill: #252525;
@@ -91,3 +93,40 @@ body {
 .list-box:nth-child(5n+5) {
     background: #9EFFFF;
 } 
+.add-goals {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 0.6rem;
+    position: relative;
+    margin-top: -20rem;
+}
+.goal {
+    width: 330px;
+    height: 230px;
+    border-radius: 20px;
+    background: #252525;
+    padding: 1rem;
+    color: #CFCFCF;
+    font-family: Nunito;
+    font-size: 22px;
+}
+.add-goal {
+    width: 130px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #30BE71;
+    color: #FFF;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 20px;
+}
+.compose {
+    width: 100%;
+    height: 100%;
+    background: #313030;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
