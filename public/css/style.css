@@ -10,13 +10,12 @@ body {
     display: flex;
     flex-direction: column;
     place-items: center;
-
 }
 .nav {
     display: flex;
     padding: 2rem;
-    flex-direction: column;
-    justify-content: center;
+    place-items: center;
+    justify-content: space-between;
 }
 .nav-link {
     color: #FFF;
@@ -32,6 +31,7 @@ body {
     flex-direction: column;
     place-items: center;
 }
+
 .bg-img {
     width: 370px;
     height: 400px;
