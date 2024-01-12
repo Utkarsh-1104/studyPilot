@@ -1,5 +1,11 @@
 <%- include('./partials/header') %>
 <div class="list-cont">
-    
+    <% if (goalsList.length === 0) { %>
+        <div class="list-box">Empty</div>
+    <% } else { %>
+        <% goalsList.forEach(goal => { %>
+            <div class="list-box"><%= goal %></div>
+        <% }) %>
+    <% } %>
 </div>
 <%- include('./partials/footer') %>
