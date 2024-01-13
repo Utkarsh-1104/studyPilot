@@ -50,7 +50,7 @@ body {
     font-family: Nunito;
     font-size: 25px;
     position: fixed;
-    top: 33rem;
+    top: 33.5rem;
 }
 .btn-div {
     fill: #252525;
@@ -129,18 +129,17 @@ a {
     place-items: center;
     gap: 0.5rem;
     position: relative;
-    margin-top: -20.5rem;
+    margin-top: -20rem;
 }
 .goal {
     width: 330px;
-    height: 230px;
+    height: 80px;
     border-radius: 20px;
     background: #252525;
     padding: 1rem;
     color: #CFCFCF;
     font-family: Nunito;
     font-size: 22px;
-
 }
 .add-goal {
     width: 130px;
@@ -152,7 +151,7 @@ a {
     text-align: center;
     font-family: Nunito;
     font-size: 20px;
-    margin-bottom: 0.4rem;
+    margin-top: 2.9rem;
 }
 .compose {
     width: 100%;
