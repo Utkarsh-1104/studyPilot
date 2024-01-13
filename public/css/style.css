@@ -103,7 +103,7 @@ a {
 }
 .list-box {
     flex-wrap: wrap;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 10px;
     font-family: Nunito;
     font-size: 20px;

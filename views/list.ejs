@@ -3,9 +3,12 @@
     <% if (goalsList.length === 0) { %>
         <div class="list-box">Empty</div>
     <% } else { %>
-        <% goalsList.forEach(goal => { %>
-            <div class="list-box"><%= goal %></div>
-        <% }) %>
+        <% for (let i = 0; i < goalsList.length; i++) { %>
+            <div class="list-box">
+                <h3>Goal : <%= goalsList[i] %></h3>
+                <h4>Time : <%= timeList[i] %></h4>    
+            </div>
+        <% } %>
     <% } %>
 </div>
 <%- include('./partials/footer') %>

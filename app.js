@@ -8,13 +8,14 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 const goals = []
+const times = []
 
 app.get('/', (req, res) => {
     res.render('home')
 })
 
 app.get('/list', (req, res) => {
-    res.render('list', { goalsList: goals })
+    res.render('list', { goalsList: goals, timeList: times })
 })
 
 app.get('/compose', (req, res) => {
@@ -27,6 +28,7 @@ app.post('/', (req, res) => {
 
 app.post('/compose', (req, res) => {
     goals.push(req.body.goal)
+    times.push(req.body.time)
     res.redirect('/list')
 })
 
