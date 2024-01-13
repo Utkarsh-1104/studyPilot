@@ -49,9 +49,6 @@ body {
     color: #FFF;
     font-family: Nunito;
     font-size: 25px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
     position: fixed;
     top: 33rem;
 }
@@ -75,11 +72,13 @@ body {
     place-items: center;
     justify-content: center;
     gap: 3rem;
-    margin-top: 12rem;
+    position: fixed;
+    top: 44rem;
+    margin-left: 10%;
 }
 .btn-grp {
     width: 125px;
-    height: 45px;
+    height: 50px;
     border-radius: 10px;
     background: rgb(174, 201, 0);
 }
@@ -163,5 +162,4 @@ a {
     flex-direction: column;
     place-items: center;
     border-radius: 20px;
-    
 }
