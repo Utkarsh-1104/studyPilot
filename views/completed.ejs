@@ -1,0 +1,14 @@
+<%- include('./partials/header') %>
+<div class="list-cont">
+    <% if (completedGoalsList.length === 0) { %>
+        <div class="list-box">No goals completed :(</div>
+    <% } else { %>
+        <% for (let i = 0; i < goalsList.length; i++) { %>
+            <div class="list-box">
+                <h3>Goal : <%= goalsList[i] %></h3>
+                <h4>Time : <%= timeList[i] %></h4>    
+            </div>
+        <% } %>
+    <% } %>
+</div>
+<%- include('./partials/footer') %>
