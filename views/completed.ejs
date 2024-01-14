@@ -3,10 +3,9 @@
     <% if (completedGoalsList.length === 0) { %>
         <div class="list-box">No goals completed :(</div>
     <% } else { %>
-        <% for (let i = 0; i < goalsList.length; i++) { %>
+        <% for (let i = 0; i < completedGoalsList.length; i++) { %>
             <div class="list-box">
-                <h3>Goal : <%= goalsList[i] %></h3>
-                <h4>Time : <%= timeList[i] %></h4>    
+                <h3>Completed : <%= completedGoalsList[i] %></h3>
             </div>
         <% } %>
     <% } %>

@@ -23,7 +23,7 @@ app.get('/compose', (req, res) => {
 })
 
 app.get('/completed', (req, res) => {
-    res.render('completed')
+    res.render('completed', {completedGoalsList : completed})
 })
 app.post('/', (req, res) => {
     res.redirect('/compose')
@@ -37,6 +37,9 @@ app.post('/compose', (req, res) => {
 
 app.post('/completed', (req, res) => {
     console.log(req.body.radio);
+    completed.push(req.body.radio)
+    const index = goals.indexOf(req.body.radio)
+    goals.splice(index, 1)
     res.redirect('/list')
 })
 app.listen(1111, () => {

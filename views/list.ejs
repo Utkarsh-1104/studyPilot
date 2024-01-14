@@ -6,7 +6,7 @@
         <% for (let i = 0; i < goalsList.length; i++) { %>
             <form action="/completed" method="post">
                 <div class="list-box">
-                    <input type="radio" name="radio" class="checkbox" onChange="this.form.submit()" value="" >
+                    <input type="radio" name="radio" class="checkbox" onChange="this.form.submit()" value="<%= goalsList[i] %>" >
                     <div>
                         <h3>Goal : <%= goalsList[i] %></h3>
                         <h4>Time : <%= timeList[i] %></h4>    
