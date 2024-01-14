@@ -36,7 +36,6 @@ app.post('/compose', (req, res) => {
 })
 
 app.post('/completed', (req, res) => {
-    console.log(req.body.radio);
     completed.push(req.body.radio)
     const index = goals.indexOf(req.body.radio)
     goals.splice(index, 1)
