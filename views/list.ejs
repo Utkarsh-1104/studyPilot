@@ -1,13 +1,18 @@
 <%- include('./partials/header') %>
 <div class="list-cont">
     <% if (goalsList.length === 0) { %>
-        <div class="list-box">Empty</div>
+        <div class="list-box">No goals added :(</div>
     <% } else { %>
         <% for (let i = 0; i < goalsList.length; i++) { %>
-            <div class="list-box">
-                <h3>Goal : <%= goalsList[i] %></h3>
-                <h4>Time : <%= timeList[i] %></h4>    
-            </div>
+            <form action="/completed" method="post">
+                <div class="list-box">
+                    <input type="radio" name="radio" class="checkbox" onChange="this.form.submit()" value="" >
+                    <div>
+                        <h3>Goal : <%= goalsList[i] %></h3>
+                        <h4>Time : <%= timeList[i] %></h4>    
+                    </div>
+                </div>
+            </form>
         <% } %>
     <% } %>
 </div>

@@ -102,11 +102,18 @@ a {
     gap: 1.3rem;
 }
 .list-box {
+    display: flex;
     flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
     padding: 1rem;
     border-radius: 10px;
     font-family: Nunito;
     font-size: 20px;
+}
+input.checkbox {
+    width: 1.3rem;
+    height: 1.3rem;
 }
 .list-box:nth-child(5n+1) {
     background: #FD99FF;
