@@ -3,17 +3,17 @@
     <% if (goalsList.length === 0) { %>
         <div class="list-box">No goals added :(</div>
     <% } else { %>
-        <% for (let i = 0; i < goalsList.length; i++) { %>
+        <% goalsList.forEach(goal => { %>
             <form action="/completed" method="post">
                 <div class="list-box">
-                    <input type="radio" name="radio" class="checkbox" onChange="this.form.submit()" value="<%= goalsList[i] %>" >
+                    <input type="radio" name="radio" class="checkbox" onChange="this.form.submit()" value="<%= goal._id %>" >
                     <div>
-                        <h3>Goal : <%= goalsList[i] %></h3>
-                        <h4>Time : <%= timeList[i] %></h4>    
+                        <h3>Goal : <%= goal.name %></h3>
+                        <h4>Time : <%= goal.time %></h4>    
                     </div>
                 </div>
             </form>
-        <% } %>
+        <% }) %>
     <% } %>
 </div>
 <%- include('./partials/footer') %>

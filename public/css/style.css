@@ -110,6 +110,7 @@ a {
     border-radius: 10px;
     font-family: Nunito;
     font-size: 20px;
+    margin-top: 0.5rem;
 }
 input.checkbox {
     width: 1.3rem;

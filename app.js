@@ -1,46 +1,73 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
 const app = express()
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
+const URI = process.env.MONGODB_URI
 
-const goals = []
-const times = []
-const completed = []
+async function main () {
 
-app.get('/', (req, res) => {
-    res.render('home')
-})
+    mongoose.connect(URI)
 
-app.get('/list', (req, res) => {
-    res.render('list', { goalsList: goals, timeList: times })
-})
+    const goalSchema = {
+        name: {
+            type: String,
+            required: true
+        },
+        time: String
+    }
+    
+    const completedSchema = {
+        name: String,
+        time: String
+    }
 
-app.get('/compose', (req, res) => {
-    res.render('compose')
-})
+    const Goal = mongoose.model('Goal', goalSchema)
+    const Completed = mongoose.model('Completed', completedSchema)
+    
+    app.get('/', (req, res) => {
+        res.render('home')
+    })
+    
+    app.get('/list', async (req, res) => {
+        const goals = await Goal.find()
+        res.render('list', { goalsList: goals })
+    })
+    
+    app.get('/compose', (req, res) => {
+        res.render('compose')
+    })
+    
+    app.get('/completed', async (req, res) => {
+        const completed = await Completed.find()
+        res.render('completed', {completedGoalsList : completed})
+    })
+    app.post('/', (req, res) => {
+        res.redirect('/compose')
+    })
+    
+    app.post('/compose', (req, res) => {
+        const goal = new Goal ({
+            name: req.body.goal,
+            time: req.body.time
+        })
+        goal.save()
+        res.redirect('/list')
+    })
+    
+    app.post('/completed', async (req, res) => {
+       
+    })
 
-app.get('/completed', (req, res) => {
-    res.render('completed', {completedGoalsList : completed})
+    app.post('/clear' , async (req, res) => {
+        
+    })
+}
+    app.listen(1111, () => {
+        console.log("Server running on http://localhost:1111");
 })
-app.post('/', (req, res) => {
-    res.redirect('/compose')
-})
-
-app.post('/compose', (req, res) => {
-    goals.push(req.body.goal)
-    times.push(req.body.time)
-    res.redirect('/list')
-})
-
-app.post('/completed', (req, res) => {
-    completed.push(req.body.radio)
-    const index = goals.indexOf(req.body.radio)
-    goals.splice(index, 1)
-    res.redirect('/list')
-})
-app.listen(1111, () => {
-    console.log("Server running on http://localhost:1111");
-})
+main()
