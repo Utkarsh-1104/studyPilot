@@ -60,7 +60,15 @@ async function main () {
     })
     
     app.post('/completed', async (req, res) => {
-        
+        const completedGoalId = req.body.radio
+        const completedList = await Goal.findById(completedGoalId)
+        const completedGoal = new Completed ({
+            name: completedList.name,
+            time: completedList.time
+        })
+        completedGoal.save()
+        await Goal.findByIdAndDelete(completedGoalId)
+        res.redirect('/list')
     })
 
     app.post('/clear' , async (req, res) => {
