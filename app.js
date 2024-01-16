@@ -60,11 +60,12 @@ async function main () {
     })
     
     app.post('/completed', async (req, res) => {
-       
+        
     })
 
     app.post('/clear' , async (req, res) => {
-        
+        await Completed.deleteMany()
+        res.redirect('/completed')
     })
 }
     app.listen(1111, () => {
