@@ -17,7 +17,12 @@
             </button>
         </form>
         <% completedGoalsList.forEach (completedGoal => { %>
-            
+            <div class="list-box">
+                <div class="cg">
+                    <h3>Completed : <%= completedGoal.name %></h3>
+                    <h4>In : <%= completedGoal.time %></h4>
+                </div>
+            </div>
         <% }) %>
     <% } %>
 </div>
