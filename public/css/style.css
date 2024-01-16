@@ -170,3 +170,21 @@ input.checkbox {
     place-items: center;
     border-radius: 20px;
 }
+.cg {
+    text-align: center;
+}
+.clear {
+    width: 265px;
+    height: 60px;
+    position: fixed;
+    left: 4.8rem;
+    top: 5.9rem;
+    border-radius: 10px;
+    background: #F00;
+    color: #FFF;
+    font-family: Nunito;
+    font-size: 20px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
