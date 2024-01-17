@@ -52,7 +52,7 @@ StudyPilot is a web application designed to help users track their study goals e
    npm start
    ```
 
-5. Access the app at `http://localhost:3000` in your web browser.
+5. Access the app at `http://localhost:1111` in your web browser.
 
 ## Contributing
 
